@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Belajar Position 1</title>
+  <style>
+    .satu,.dua,.tiga{
+      width: 200px;
+      height: 200px;
+      position:absolute;
+    }
+    .satu{
+      background-color: red;
+    }
+    .dua{
+      background-color: yellow;
+      top: 100px;
+      left: 100px;
+      z-index: 1;
+    }
+    .tiga{
+      background-color: blue;
+      top: 200px;
+      left: 200px;
+    }
+    .kotak{
+      background-color: black;
+      top: 100px;
+      left: 100px;
+      right: 100px;
+      bottom: 100px;
+      opacity: 0.7;
+      position: fixed;
+      z-index: 999;
+    }
+    .close{
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top:-15px;
+      right: -15px;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      line-height: 25px;
+      
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="satu"></div>
+  <div class="dua"></div>
+  <div class="tiga"></div>
+  <div class="kotak">
+    <div class="close">X</div>
+  </div>
+  
+  
+</body>
+</html>

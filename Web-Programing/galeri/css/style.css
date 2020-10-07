@@ -1,0 +1,194 @@
+/*Font*/
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url(../fonts/bebasneue-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Style utama*/
+body{
+  font: 18px/36px 'bebas_neueregular', 'Arial Narrow', sans-serif;
+  background-color: lightgrey;
+}
+
+h1{
+  font-size: 80px;
+  margin: 50px 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+}
+
+.container{
+  width: 600px;
+  background-color: white;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 0 3px 3px rgba(0, 0,0, 0.3);
+  border-radius: 5px;
+}
+
+.gallery li{
+  width: 120px;
+  height: 120px;
+  /*overflow: hidden;*/
+  border: 5px solid darkgrey;
+  float: left;
+  margin-right: 20px;
+  position: relative;
+}
+.gallery li, .gallery a img, .gallery span{
+  border-radius: 50%;
+}
+.gallery li span{
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(200,200,200,0.5);
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 120px;
+  color: #333;
+  opacity: 0;
+  transform: scale(0) rotate(0);
+  transition: 0.3s;
+ 
+}
+
+.gallery li a:hover span{
+  opacity: 1;
+  transform: scale(1) rotate(360deg);
+}
+
+.gallery li a:active{
+  outline: none;
+}
+
+.overlay{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  background: rgba(0, 0,0, 0);
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 9999;
+  transition: .8s;
+  padding: 80px 0;
+}
+
+.overlay:target{
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0,0, 0.8);
+  width: auto;
+  height: auto;
+}
+.overlay img{
+  border-radius: 0;
+  max-height: 100%;
+  box-shadow: 0 0 7px 2px rgba(0,0,0,.5);
+}
+
+.overlay:target img{
+  animation: zoomDanFade 1s;
+}
+
+.overlay .close{
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -20px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  line-height: 20px;
+  padding: 3px;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.overlay:target .close{
+  animation: slideDown .5s .5s forwards;
+}
+
+.next, .previous{
+  width: 93px;
+  height: 93px;
+  background-image: url(../img/next.png);
+  position: absolute;
+  top: 250px;
+  right: 350px;
+  opacity: 0;
+}
+.previous{
+  background-image: url(../img/previous.png);
+  left: 350px;
+  right: 0px;
+}
+
+.next:active, .previous:active{
+  /*border: none;
+  /*background: none;*/
+  outline: none;
+  background-color: rgba(200,200,200,0.5);
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.overlay:target .next,
+.overlay:target .previous{
+  animation: fadeAjah .5s 1s forwards;
+}
+
+@keyframes fadeAjah{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes zoomDanFade {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown{
+  0%{
+    opacity: 0;
+    margin-top: -30px;
+  }
+  100%{
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+
+
+/*clearfix*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}

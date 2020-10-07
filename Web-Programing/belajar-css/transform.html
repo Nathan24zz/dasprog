@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Belajar Transform & Transisi</title>
+   <style>
+     .kotak{
+       width: 100px;
+       height: 100px;
+       margin: 5px 0;
+       background-color: salmon;
+       text-align: center;
+       line-height: 100px;
+     }
+     .container{
+       width: 900px;
+       border: 5px solid black;
+     }    
+     .kotak1{transition: all 3s ease;}
+     .kotak2{transition: all 3s ease-in;}
+     .kotak3{transition: all 3s ease-out;}
+     .kotak4{transition: all 3s ease-in-out;}
+     .kotak5{transition: all 3s linear;}
+     .kotak6{transition: all 3s cubic-bezier(.23,-0.33,.9,1.47);}
+
+     .container:hover .kotak{
+       transform: rotate(360deg);
+       margin-left: 800px;
+       background-color: blue;
+     }
+
+   </style>
+</head>
+<body>
+  <div class="container">
+    <div class="kotak kotak1">ease</div>
+    <div class="kotak kotak2">ease-in</div>
+    <div class="kotak kotak3">ease-out</div>
+    <div class="kotak kotak4">ease-in-out</div>
+    <div class="kotak kotak5">linear</div>
+    <div class="kotak kotak6">cubic-bezier</div>
+    
+  </div>
+</body>
+</html>

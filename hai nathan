@@ -1,0 +1,182 @@
+perkabelan, kabel servo copot, buat elektrik tahan lama
+agoritma,
+lokalisasi, gimana cara robot tahu posisinya, odometri, set 10 cm, ngitung langkah, gak selalu 10 cm, jalan samping jelek, muternyabisa" pindah titik, main lama odometri makin jelek
+cara lain deteksi gawang sbg kompensasi, buat reset waktu offset udah besar
+ketika salah satu pemain liat bola, yg lain ganyari, tapi akhirnya maslaha soalnya dihadaang
+holding ketika 2 robot liat bola, slaah satu harus ngalah, -> pake posisi kamera pake jarak, tiap robot tau jarak bola thdp bola (regresi) polinomial ->> 
+jalan keseimbangan biar ketahanan kuat
+tadi jatuh ga bangun
+
+stabilitas + persepsi
+beda tilt dikit regresinya rusak
+
+Qt :
+nambah window baru yg terhubung dengan mainwindow:
+-> klikkanan forms-> Qt Designer From Class (misal:Mydialog)->tambah #include"mydialog.h" pada mainwindow.h dan mainwindow.cpp
+Tambah di
+mainwindow.h =
+private:
+    Ui::MainWindow *ui;
+    MyDialog *mDialog;
+
+mainwindow.cpp =
+void MainWindow::on_actionNew_Window_triggered()
+{
+    mDialog = new MyDialog(this);
+    mDialog->show();
+}
+
+pertanyaan:
+1. buat gui enaknya pake mana
+2. .ui, ui 
+3. kalau mau buat kyk robot monitor yg dibuat pertama kali apa
+4. 
+
+Belajar UDP:
+https://www.geeksforgeeks.org/udp-server-client-implementation-c/
+https://www.boost.org/doc/libs/1_35_0/doc/html/boost_asio/tutorial/tuttimer1.html
+https://gitlab.com/maroqi.jalil/jalil-job/-/tree/master/UDPCommunication/UDPboostAsio
+https://www.gamedev.net/blogs/entry/2249317-a-guide-to-getting-started-with-boostasio/
+setting awal : https://www.boost.org/doc/libs/1_72_0/more/getting_started/unix-variants.html#get-boost
+
+Cara ngerun game di vscode:
+g++ -c main.cpp
+g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+./sfml-app
+
+Cara record with SSR :
+pactl load-module module-loopback
+pactl unload-module module-loopback
+
+
+Pastebin:
+z2ExjC6J
+ucJZbufP
+E4CnF5S0
+FPKmvaSk
+H3y05F7s
+
+Belajar C++ :
+cara run vscode:g++ -g belajar.cpp -o belajar
+		./belajar
+
+preprocessor = https://www.geeksforgeeks.org/cc-preprocessors/
+		https://gcc.gnu.org/onlinedocs/cpp/Once-Only-Headers.html
+destructor = https://www.belajarcpp.com/tutorial/cpp/destructor/
+
+Cara tahu seberapa besar suatu tipe data:
+#include <iostream>
+#include <limits>
+std::cout << "Maximum value for int: " << std::numeric_limits<int>::max() << endl; //untuk mencari nilai max dari suatu tipe data 
+std::cout << "Minimum value for int: " << std::numeric_limits<int>::min() << endl; //untuk mencari nilai min dari suatu tipe data
+
+Teknik sorting:
+https://www.softwaretestinghelp.com/sorting-techniques-in-cpp/
+
+Belajar php :
+cara nginstall & uninstall : https://vitux.com/how-to-install-xampp-on-your-ubuntu-18-04-lts-system/
+
+setiap kali laptop mati maka kita harus menghidupkan kembali Apache & MySQL nya
+untuk menjalankan Apache dan MySQL tuliskan: sudo /opt/lampp/lampp start
+untuk dapat mengedit apapun di htdocs : cd /opt/lampp ; sudo chown -R nathanael:nathanael htdocs
+
+
+Belajar Machine Learning:
+source ~/.bashrc
+source activate av
+
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py", line 313, in recv_into
+    return self.connection.recv_into(*args, **kwargs)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/OpenSSL/SSL.py", line 1840, in recv_into
+    self._raise_ssl_error(self._ssl, result)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/OpenSSL/SSL.py", line 1646, in _raise_ssl_error
+    raise WantReadError()
+OpenSSL.SSL.WantReadError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/response.py", line 425, in _error_catcher
+    yield
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/response.py", line 507, in read
+    data = self._fp.read(amt) if not fp_closed else b""
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/cachecontrol/filewrapper.py", line 62, in read
+    data = self.__fp.read(amt)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/http/client.py", line 454, in read
+    n = self.readinto(b)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/http/client.py", line 498, in readinto
+    n = self.fp.readinto(b)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py", line 326, in recv_into
+    raise timeout("The read operation timed out")
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/cli/base_command.py", line 188, in _main
+    status = self.run(options, args)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/cli/req_command.py", line 185, in wrapper
+    return func(self, options, args)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/commands/install.py", line 332, in run
+    requirement_set = resolver.resolve(
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/resolution/legacy/resolver.py", line 179, in resolve
+    discovered_reqs.extend(self._resolve_one(requirement_set, req))
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/resolution/legacy/resolver.py", line 362, in _resolve_one
+    abstract_dist = self._get_abstract_dist_for(req_to_install)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/resolution/legacy/resolver.py", line 314, in _get_abstract_dist_for
+    abstract_dist = self.preparer.prepare_linked_requirement(req)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/operations/prepare.py", line 467, in prepare_linked_requirement
+    local_file = unpack_url(
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/operations/prepare.py", line 255, in unpack_url
+    file = get_http_url(
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/operations/prepare.py", line 129, in get_http_url
+    from_path, content_type = _download_http_url(
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/operations/prepare.py", line 281, in _download_http_url
+    for chunk in download.chunks:
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/cli/progress_bars.py", line 166, in iter
+    for x in it:
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_internal/network/utils.py", line 15, in response_chunks
+    for chunk in response.raw.stream(
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/response.py", line 564, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/response.py", line 529, in read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/nathanael/anaconda3/envs/av/lib/python3.8/site-packages/pip/_vendor/urllib3/response.py", line 430, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.")
+pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
+
+
+OPENCV:
+Resource : https://github.com/opencv/opencv/tree/master/samples/data
+https://www.pyimagesearch.com/start-here/
+connect to droidcam:
+	buka terminal ketik cd /tmp/droidcam
+	./droidcam
+	connect
+	pada codingan nilainya 1
+
+https://labs.cognitiveclass.ai/
+pass coursera : ntan426854
+
+bit.ly/onboarding-response 
+website: bit.ly/project-ads 
+https://bit.ly/InternSample 
+
+POSTMAN:
+https://rexion.my.id/apps/index.php/restapi_company/get_companycontact?db=106-merak&id=111&name=test1%20plus&phone=12324344&username=18-0011
+
+
+
+
+
+
+
+
+    
+

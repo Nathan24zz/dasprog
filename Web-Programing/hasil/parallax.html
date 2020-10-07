@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Scrolling</title>
+  <link rel="stylesheet" href="parallax.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <section class="zoom">
+    <img src="img/mountain1.png" id="layer1">
+    <img src="img/mountain2.png" id="layer2">
+    <img src="img/text.png" id="text">
+  </section>
+  <section class="content">
+    <h2>Parallax Scrolling</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima illum fugiat possimus, inventore fuga id! Placeat, voluptatem eveniet quae, vitae quod ratione repellendus dolore ex amet maiores voluptatum! Perspiciatis aperiam eligendi recusandae alias! Quidem iusto mollitia eveniet temporibus voluptas, sint voluptate fuga nulla quod! Reprehenderit rerum nulla enim eaque!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nostrum mollitia explicabo facere maxime repellendus, quod sint voluptates. Itaque reprehenderit eos nobis repudiandae eum fugiat?</p>
+  </section>
+  
+  <script src="jquery-3.5.0.min.js"></script>
+  <!-- <script type="text/javascript">
+    const layer1 = document.getElementById('layer1');
+    const layer2 = document.getElementById('layer2');
+    const text = document.getElementById('text');
+    document.addEventListener('scroll', function(){
+      const offset = window.pageYOffset;
+      layer1.style.width = (100+offset/5)+'%';
+
+      layer2.style.width = (100+offset/5)+'%';
+      layer2.style.left = offset/50 + '%';
+
+      text.style.top = -offset/20+'%';
+    })
+  </script> -->
+  <script type="text/javascript">
+  $(window).scroll(function(){
+    const offset = $(this).scrollTop();
+    $('#layer1').css({
+      'width' : (100+offset/5)+'%'
+    });
+    $('#layer2').css({
+      'width' : (100+offset/5)+'%',
+      'left': offset/50 +'%'
+    });
+    $('#text').css({
+      'top' : -offset/20+'%'
+    });
+  })
+  </script>
+</body>
+</html>

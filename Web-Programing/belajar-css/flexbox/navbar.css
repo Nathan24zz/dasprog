@@ -1,0 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;;
+}
+
+/* Navbar */
+nav{
+  display: flex;
+  background-color: rgb(180, 78, 232);
+  justify-content: space-around;
+  /* padding: 20px 0; */
+  color: rgb(234, 192, 255);
+  height: 50px;
+  align-items: center;
+}
+
+nav .logo{
+  font-family:'Pacifico', cursive;
+  letter-spacing: 3px;
+}
+
+nav ul{
+  display: flex;
+  width: 40%;
+  list-style: none;
+  justify-content: space-between;
+}
+
+nav ul li{
+  color: rgb(234, 192, 255);
+  text-decoration: none;
+  font-size: 0.4cm;
+  
+}
+
+nav ul li:hover{
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Hamburger Menu */
+.menu-toggle{
+  display: none;
+  flex-direction: column;
+  height: 25px;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.menu-toggle span{
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(234, 192, 255);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* Hamburger Animation */
+.menu-toggle span:nth-child(1).animation1{
+  background-color: white;
+  transform-origin: 0 0;
+  transform: rotate(45deg) translate(-1px, -2px);
+}
+.menu-toggle span:nth-child(2).animation2{
+  opacity: 0;
+  transform: scale(0);
+}
+.menu-toggle span:nth-child(3).animation3{
+  background-color: white;
+  transform-origin: 0 100%;
+  transform: rotate(-45deg) translate(-1px, 3px);
+}
+
+nav ul.animation0{
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(180, 78, 232);
+  justify-content: space-evenly;
+  z-index: -1;
+  width: 70%;
+  transform: translate(100%);
+  opacity: 0;
+  transition: all 1s;
+}
+
+nav ul.animation01{
+  opacity: 1;
+  transform: translate(0);
+}
+
+
+/* Responsice Breakpoint */
+
+/* ukuran tablet */
+@media screen and (max-width:768px){
+  nav ul{
+    width: 50%;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (max-width:576px){
+  nav ul{
+    display: none;
+  }
+  .menu-toggle{
+    display: flex;
+  }
+}

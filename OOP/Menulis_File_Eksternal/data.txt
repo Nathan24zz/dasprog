@@ -1,0 +1,11 @@
+ini adalah file eksternal
+dan ini adalah baris ke-dua
+
+data
+No  Nama
+1   Dodit
+2   Sukiman
+3   Sukija  
+4   Yanto
+5   Mario
+6   Sandra

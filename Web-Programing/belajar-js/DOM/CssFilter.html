@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Filter</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    details{
+      text-align: left;
+    }
+    img{
+      width: 250px;
+    }
+  </style>
+</head>
+
+<body>
+  <details>
+    <summary> What's this?</summary>
+    <div>
+      <p>
+        Demo showing CSS <a href="http://dev.w3.org/fxtf/filters/" target="_blank">Filter Effects 1.0</a>,specially the 
+        <a href="http://dev.w3.org/fxtf/filters/#typedef-filter-function-list" target="_blank">filter functions</a>
+      </p>
+    </div>
+  </details>
+
+  <h1>CSS Filter</h1>
+  
+  <img src="img/gbr1.jpg"> <br>
+  <label for="code">-webkit-filter:none;</label> <br>
+
+  <label>blur(): </label> <input type="range" name="blur" min="0" max="10" value="0"> <br>
+  <label>grayscale(): </label> <input type="range" name="grayScale" min="0" max="10" value="0"> <br>
+  <label>drop-shadow(): </label> <input type="range" name="dropShadow" min="0" max="100" value="0"> <br>
+  <label>sepia(): </label> <input type="range" name="sepia" min="0" max="10" value="0"> <br>
+
+  <script src="CssFilter.js"></script>
+</body>
+</html>

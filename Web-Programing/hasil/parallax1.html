@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax 1</title>
+  <link rel="stylesheet" href="parallax1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <section class="zoom">
+    <img src="img/bg1.jpg" class="bg">
+    <img src="img/moon.png" class="layer1">
+    <img src="img/mountain.png" class="layer2">
+    <img src="img/road.png" class="layer3">
+    <h2 class="text">Moon Light</h2>
+  </section>
+  <section class="content">
+    <h2>Parallax Background Scrolling</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, necessitatibus nobis quisquam ratione praesentium ipsum, a voluptatum exercitationem id veniam possimus odit accusantium, amet nam reiciendis ea ad labore voluptatem sequi voluptatibus blanditiis neque. Nostrum pariatur aperiam atque nesciunt eos cum esse est, unde et inventore fuga officiis eius totam sapiente cumque doloribus tenetur tempora harum, dignissimos impedit veritatis aspernatur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nemo minus unde provident. Praesentium recusandae illum soluta quod inventore natus?</p>
+  </section>
+  
+  <!-- <script src="jquery-3.5.0.min.js"></script>
+  <script type="text/javascript">
+  $(window).scroll(function(){
+    const scroll = $(window).scrollTop();
+    $('.layer1').css({
+      'transform':'translate('+-scroll/20+'%,'+-scroll/60+'%)'
+    })
+    $('.layer2').css({
+      'transform':'translateY('+-scroll/40+'%)'
+    })
+    $('.text').css({
+      'margin-top':scroll/20+'%'
+    })
+  })
+  </script> -->
+  <!-- cara kedua pake js saja -->
+  <script type="text/javascript">
+  const bg = document.getElementsByClassName('bg')[0];
+  const moon = document.getElementsByClassName('layer1')[0];
+  const mountain = document.getElementsByClassName('layer2')[0];
+  const road = document.getElementsByClassName('layer3')[0];
+  const text = document.getElementsByClassName('text')[0];
+
+  window.addEventListener('scroll', function(){
+    const value = window.scrollY;
+
+    bg.style.top = value*0.5 +'px';
+    moon.style.left = -value*0.5 +'px';
+    mountain.style.top = -value*0.15+'px';
+    road.style.top = value*0.15+'px';
+    text.style.top = value*0.6+'px';
+  })
+  </script>
+</body>
+</html>

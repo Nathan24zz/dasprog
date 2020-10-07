@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form</title>
+</head>
+<body>
+  <a href="table.html" target="_blank">web tabel</a>
+    <br>
+  <form>
+    <label for="username">username:</label>
+    <input type="text" id="username"> 
+      <br>
+    <label for="pass">password :</label>
+    <input type="password" id="pass"> 
+      <br>
+    <input type="radio" id="pria" name="jeniskelamin"><label for="pria">pria</label>
+    <input type="radio" id="wanita" name="jeniskelamin"><label for="wanita">wanita</label>
+      <br>
+    <input type="checkbox" id="karate"> <label for="karate">karate</label> <br>
+    <input type="checkbox" id="berenang"> <label for="berenang">berenang</label> <br>
+    <input type="checkbox" id="bermain"> <label for="bermain">bermain</label> <br>
+      <br>
+    
+    <textarea></textarea>
+    <button type="submit">kirim</button> <br> 
+    <button type="reset">reset</button> 
+    <button type="button">tombol</button> 
+    <button type="menu">menu</button> <br>
+
+    <select>
+      <option>Bandung</option>
+      <option>Pasuruan</option>
+      <option>Surabaya</option>
+    </select>    
+  </form>
+  <br>
+
+<!-- buat tabel biar rapi-->
+  <form>
+    <table border="0" cellpadding="5">
+      <tr>
+        <td align="right"><label for="text1">Text :</label></td>
+        <td><input id="text1" type="text"></td>
+      </tr>
+      <tr>
+        <td align="right"><label for="pass1">Password :</label></td>
+        <td><input id="pass1" type="text"></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <label for="radio1">Radio 1</label> <input name="contoh" type="radio" id="radio1">
+          <label for="radio2">Radio 2</label> <input name="contoh" type="radio" id="radio2">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <label for="check1">Checkbox 1</label> <input  type="checkbox" id="check1">
+          <label for="check2">Checkbox 2</label> <input  type="checkbox" id="check2">
+        </td>
+      </tr>
+      <tr>
+        <td align="right">Combo Box :</td>
+        <td>
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right">Textarea :</td>
+        <td><textarea></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><button type="reset">reset</button></td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>
